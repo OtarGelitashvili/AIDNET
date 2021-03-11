@@ -1,0 +1,102 @@
+﻿@model CarMarket.Models.Car
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div class="container">
+    <img src="~/image/@Html.DisplayFor(model => model.Img) " class="rounded float-left" style="width:500px; height:200px;" />
+    <div class="text-right">
+        <a asp-action="Edit" asp-route-id="@Model.Id"  class="btn btn-warning"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i> EDIT </a>
+        <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger"  onclick="return confirm('Are you sure you want to Delete?')"> <i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a> 
+        <a asp-action="Index" class="btn btn-secondary"> <i class="fa fa-arrow-left" aria-hidden="true"></i> Back to List</a>  
+    </div>
+</div>
+
+<div class="details">
+    <dl class="row">
+        <dt class="col-sm-2">
+           Model
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+        <dt class="col-sm-2">
+            Year
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Year)
+        </dd>
+        <dt class="col-sm-2">
+            Info
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Info)
+        </dd>
+        <dt class="col-sm-2">
+            Price
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+            @Html.DisplayFor(model => model.Currency)
+        </dd>
+
+        <dt class="col-sm-2">
+           Abs
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Abs)
+        </dd>
+        <dt class="col-sm-2">
+            Electric Window Lift
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ElectricWindowLift)
+        </dd>
+        <dt class="col-sm-2">
+            Hatch
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Hatch)
+        </dd>
+        <dt class="col-sm-2">
+            Bluetooth
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Bluetooth)
+        </dd>
+        <dt class="col-sm-2">
+            Alarm
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Alarm)
+        </dd>
+        <dt class="col-sm-2">
+            Parking Control
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ParkingControl)
+        </dd>
+        <dt class="col-sm-2">
+           Navigation
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Navigation)
+        </dd>
+        <dt class="col-sm-2">
+           On Board Computer
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OnBoardComputer)
+        </dd>
+        <dt class="col-sm-2">
+            Multi Wheel
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MultiWheel)
+        </dd>
+    </dl>
+</div>
+

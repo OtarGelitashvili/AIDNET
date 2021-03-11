@@ -1,0 +1,102 @@
+﻿@model CarMarket.Models.Car
+
+<h3> ADD A NEW CAR </h3>
+<hr />
+<form method="post" asp-action="Create" enctype="multipart/form-data">
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label for="inputState"> CHOOSE A MODEL</label>
+            <select id="inputState" asp-for="Model" class="form-control" asp-items="new  SelectList(ViewBag.Models)"></select>
+        </div>
+        <div class="form-group col-md-6">
+            <label>YEAR</label>
+            <input asp-for="Year" type="number" class="form-control" id="inputEmail4" placeholder="YEAR" required >
+        </div>
+        <div class="form-group col-md-4">
+            <label>PRICE</label>
+            <input asp-for="Price" type="number" class="form-control" id="inputEmail4" placeholder="PRICE" required >
+        </div>
+        <div class="form-group col-md-2">
+            <label for="inputState"> CHOOSE A CURRENCY</label>
+            <select id="inputState" asp-for="Currency" class="form-control" asp-items="new  SelectList(ViewBag.Currency)"></select>
+        </div>
+
+        <div class="form-group col-md-8">
+            <label>INFORMATION</label>
+            <input asp-for="Info" type="text" class="form-control" id="inputEmail4" placeholder="Information" required >
+        </div>
+    </div>
+    <hr />
+    <div class="form-group">
+        <h5>The following characteristics of the vehicle:</h5>
+        <div class="form-check">
+            @Html.CheckBoxFor(m => m.Abs)
+            <label class="form-check-label" for="flexCheckDefault">
+                Abs
+            </label>
+        </div>
+
+        <div class="form-check">
+            @Html.CheckBoxFor(m => m.Bluetooth)
+            <label class="form-check-label" for="flexCheckDefault">
+                Bluetooth
+            </label>
+        </div>
+
+        <div class="form-check">
+            @Html.CheckBoxFor(m => m.ElectricWindowLift)
+            <label class="form-check-label" for="flexCheckDefault">
+                Electric Window Lift
+            </label>
+        </div>
+        <div class="form-check">
+            @Html.CheckBoxFor(m => m.Hatch)
+            <label class="form-check-label" for="flexCheckDefault">
+                Hatch
+            </label>
+        </div>
+
+        <div class="form-check">
+            @Html.CheckBoxFor(m => m.Alarm)
+            <label class="form-check-label" for="flexCheckDefault">
+                Alarm
+            </label>
+        </div>
+
+        <div class="form-check">
+            @Html.CheckBoxFor(m => m.ParkingControl)
+            <label class="form-check-label" for="flexCheckDefault">
+                Parking Control
+            </label>
+        </div>
+
+        <div class="form-check">
+            @Html.CheckBoxFor(m => m.Navigation)
+            <label class="form-check-label" for="flexCheckDefault">
+                Navigation
+            </label>
+        </div>
+
+        <div class="form-check">
+            @Html.CheckBoxFor(m => m.OnBoardComputer)
+            <label class="form-check-label" for="flexCheckDefault">
+                On Board Computer
+            </label>
+        </div>
+
+        <div class="form-check">
+            @Html.CheckBoxFor(m => m.MultiWheel)
+            <label class="form-check-label" for="flexCheckDefault">
+                Multi Wheel
+            </label>
+        </div>
+    </div>
+    <hr />
+    <div class="form-group">
+        <label class="control-label"> <h4>UPLOAD A CAR PHOTO </h4></label>
+        <input asp-for="ImageFile" class="form-control" accept="images/*"  required />
+    </div>
+    <div class="col-12 text-center" id="btn">
+        <button type="submit" class="btn btn-info"> ADD </button>
+    </div>
+</form>

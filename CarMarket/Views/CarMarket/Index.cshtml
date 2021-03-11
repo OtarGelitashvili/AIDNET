@@ -1,0 +1,32 @@
+﻿@model IEnumerable<CarMarket.Models.Car>
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2>Cars</h2>
+        </div>
+        <div class="col-6 text-right" >
+            <a asp-controller="CarMarket" asp-action="Create"> <i class=" btn btn-secondary fa fa-plus-square" aria-hidden="true">  Add</i></a>
+        </div>
+    </div>
+    
+</div>
+<div class="row">
+    @foreach (var car in Model)
+    {
+
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="@("~/image/" +car.Img)" asp-append-version="true" alt="Card image cap">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Model: @car.Model</h5>
+                    <h5 class="card-title">Year: @car.Year</h5>
+                    <h5 class="card-title">Price: @car.Price @car.Currency</h5>
+                    <a asp-action="Details" asp-route-id="@car.Id" class="btn btn-secondary "> <i class="fa fa-info-circle" aria-hidden="true"></i> DETAILS</a>
+                </div>
+            </div>
+        </div>
+
+      }
+    </div>
+
